@@ -1,0 +1,150 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+\usepackage{paracol}
+
+\iftutex
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+
+\begin{document}
+\name{Lucas Buonocore}
+\tagline{Jr Pentester}
+
+\personalinfo{%
+  \email{lucas.buonocore@outlook.fr}
+  \linkedin{lucas-buonocore}
+  \github{lukyyy9}
+  \location{Nice, France}
+}
+
+\makecvheader
+
+\columnratio{0.6}
+
+\begin{paracol}{2}
+
+\cvsection{Expérience}
+
+\cvevent{Alternant Développement IT}{Monaco Telecom}{août 2023 -- Aujourd'hui}{Monaco}
+\begin{itemize}
+    \item Développement full-stack (React.js/Java Spring)
+    \item Management d'équipe de développement
+\end{itemize}
+
+\divider
+
+\cvevent{Alternant AdminSys}{FACI}{septembre 2021 -- août 2023}{Nice}
+\begin{itemize}
+    \item Développement d'applications
+    \item Support technique et installation réseau
+    \item Gestion de la relation client
+\end{itemize}
+
+\cvsection{Projets}
+
+\cvevent{Application d'automatisation d'onboarding IT}{Depine}{avril 2024 -- Present}{Valbonne}
+\begin{itemize}
+    \item Management agile d'une équipe (SCRUM)
+    \item Développement full-stack (Vue.js/Node.js)
+    \item Automatisation des processus de développement et de déploiement (CI/CD)
+    \item Réalisation de maquettes et prototypes
+\end{itemize}
+
+\divider
+
+\cvevent{Bot Discord de partage de média}{Distant}{mars 2024}{Valbonne}
+\begin{itemize}
+    \item Automatisation des processus de développement et de déploiement (CI/CD)
+\end{itemize}
+
+\divider
+
+\cvevent{Hub pour E-sports}{Reave}{octobre 2023 -- janvier 2024}{Valbonne}
+\begin{itemize}
+    \item Management agile d'une équipe (SCRUM)
+    \item Développement full-stack (Next.js/Rust/React.js/Tauri.js/Nest.js)
+    \item Réalisation de maquettes et prototypes
+\end{itemize}
+
+
+\switchcolumn
+
+\cvsection{Compétences}
+
+\cvtag{Kali}
+\cvtag{BurpSuite}
+\cvtag{AWS (EC2, S3, CloudWatch)}
+\cvtag{Active Directory}
+\cvtag{OWASP}
+\cvtag{YARA}
+
+\divider
+
+\cvtag{JavaScript (React, Vue, Next, Nest, Node)}
+\cvtag{Java (Spring)}
+\cvtag{Bash}
+\cvtag{PowerShell}
+\cvtag{Python}
+\cvtag{C}
+\cvtag{C++}
+\cvtag{Kubernetes}
+\cvtag{CI/CD}
+
+\cvsection{Education}
+
+\cvevent{Master of Science}{Epitech}{2024 -- 2026}{}
+{\faLock} Cybersécurité \& Cloud\break
+\begin{itemize}
+    \item Attacks and Exploits
+    \item Defensive Blue Teaming
+\end{itemize}
+
+\divider
+
+\cvevent{BUT Alternance}{IUT Nice Côte d'Azur}{2021 -- 2024}{}
+{\faTrophy} Major de Promotion\break
+\begin{itemize}
+    \item Développement d'applications
+    \item Cryptographie
+\end{itemize}
+
+\divider
+
+\cvevent{Classe préparatoire}{IMT Lille Douai}{2020 -- 2021}{}
+
+\cvsection{Certifications}
+
+\cvachievement{\faCertificate}{TOEIC C1}{Score: 975/990}
+
+\end{paracol}
+\end{document}
