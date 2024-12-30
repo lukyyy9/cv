@@ -1,1 +1,1 @@
-[View CV](https://github.com/lukyyy9/cv/blob/main/cv.pdf)
+![CV preview](assets/cv-preview.png)
