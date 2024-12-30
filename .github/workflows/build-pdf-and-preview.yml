@@ -1,0 +1,36 @@
+name: build-pdf-and-preview
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          persist-credentials: true
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+
+      - name: Convert PDF to PNG
+        run: |
+          sudo apt-get install -y poppler-utils
+          rm -f assets/cv-preview.png
+          pdftoppm -png assets/cv.pdf assets/cv-preview
+
+      - name: Commit and push PDF and image
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/cv.pdf assets/cv-preview-1.png
+          git commit -m "Update CV PDF and preview image [skip ci]" || exit 0
+          git push
