@@ -37,7 +37,7 @@ jobs:
         run: git config --local user.name "github-actions[bot]"
 
       - name: Add PDF and image to git
-        run: git add assets/cv.pdf assets/cv-preview.png
+        run: git add assets/cv.pdf assets/cv-preview-1.png
 
       - name: Commit changes
         run: git commit -m "Update CV PDF and preview image [skip ci]" || exit 0
