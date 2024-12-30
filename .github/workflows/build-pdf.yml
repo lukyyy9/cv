@@ -27,12 +27,12 @@ jobs:
           # Remove any old preview image
           rm -f assets/cv-preview.png
           # Convert PDF to a new image (cv-preview.png)
-          pdftoppm -png cv.pdf assets/cv-preview
+          pdftoppm -png assets/cv.pdf assets/cv-preview
 
       - name: Commit and push PDF and image
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add cv.pdf assets/cv-preview.png
+          git add assets/cv.pdf assets/cv-preview.png
           git commit -m "Update CV PDF and preview image [skip ci]" || exit 0
           git push
