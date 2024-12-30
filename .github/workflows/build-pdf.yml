@@ -21,18 +21,26 @@ jobs:
         with:
           root_file: cv.tex
 
-      - name: Convert PDF to PNG
-        run: |
-          sudo apt-get install -y poppler-utils
-          # Remove any old preview image
-          rm -f assets/cv-preview.png
-          # Convert PDF to a new image (cv-preview.png)
-          pdftoppm -png assets/cv.pdf assets/cv-preview
+      - name: Install poppler-utils
+        run: sudo apt-get install -y poppler-utils
 
-      - name: Commit and push PDF and image
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add assets/cv.pdf assets/cv-preview.png
-          git commit -m "Update CV PDF and preview image [skip ci]" || exit 0
-          git push
+      - name: Remove old preview image
+        run: rm -f assets/cv-preview.png
+
+      - name: Convert PDF to PNG
+        run: pdftoppm -png assets/cv.pdf assets/cv-preview
+
+      - name: Configure git user email
+        run: git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Configure git user name
+        run: git config --local user.name "github-actions[bot]"
+
+      - name: Add PDF and image to git
+        run: git add assets/cv.pdf assets/cv-preview.png
+
+      - name: Commit changes
+        run: git commit -m "Update CV PDF and preview image [skip ci]" || exit 0
+
+      - name: Push changes
+        run: git push
