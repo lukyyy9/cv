@@ -18,7 +18,7 @@ jobs:
 
       - name: Cleanup PDF and preview
         run: |
-          rm -f assets/cv-preview.png
+          rm -f assets/cv-preview-1.png
           rm -f assets/cv.pdf
 
       - name: Build PDF
