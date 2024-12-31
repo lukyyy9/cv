@@ -26,6 +26,10 @@ jobs:
         with:
           root_file: cv.tex
 
+      - name: Move cv.pdf to assets directory
+        run: |
+          mv cv.pdf assets/cv.pdf
+
       - name: Build preview
         run: |
           sudo apt-get install -y poppler-utils
