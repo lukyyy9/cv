@@ -16,18 +16,22 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           persist-credentials: true
 
-      - name: Compile LaTeX document
+      - name: Cleanup PDF and preview
+        run: |
+          rm -f assets/cv-preview.png
+          rm -f assets/cv.pdf
+
+      - name: Build PDF
         uses: xu-cheng/latex-action@v3
         with:
           root_file: cv.tex
 
-      - name: Convert PDF to PNG
+      - name: Build preview
         run: |
           sudo apt-get install -y poppler-utils
-          rm -f assets/cv-preview.png
           pdftoppm -png assets/cv.pdf assets/cv-preview
 
-      - name: Commit and push PDF and image
+      - name: Commit and push PDF and preview
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
