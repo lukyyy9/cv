@@ -3,6 +3,7 @@
 \geometry{left=1cm,right=1.25cm,top=1cm,bottom=1cm,columnsep=1.2cm}
 
 \usepackage{paracol}
+\usepackage{graphicx}
 
 \iftutex
   \setmainfont{Roboto Slab}
@@ -30,7 +31,7 @@
 
 \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
 \renewcommand{\personalinfofont}{\footnotesize}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsectionfont}{\Large\rmfamily\bfseries}
 \renewcommand{\cvsubsectionfont}{\large\bfseries}
 
 \renewcommand{\cvItemMarker}{{\small\textbullet}}
@@ -57,16 +58,17 @@
 
 \cvsection{Expérience}
 
-\cvevent{Alternant Cybersécurité}{Monaco Telecom}{septembre 2025 -- Aujourd'hui}{Monaco}
+\cvevent{Ingénieur en Cybersécurité, Alternance}{Monaco Telecom}{septembre 2025 -- Aujourd'hui}{Monaco}
 \begin{itemize}
-    \item Développement de processus automatisés intégrant la sécurité (SSI). 
-    \item Identification des points de vulnérabilité et génération de reporting pour inciter les corrections.
-    \item Intégration d’outils de cybersécurité automatisés.
+    \item Implémentation d'une pipeline SCA (Software Composition Analysis) afin d'identifier en amont les bibliothèques vulnérables utilisées dans le code (sécurité shift-left).
+    \item Établissement d'un SBOM (Software Bill Of Materials) dynamique pour assister les développeurs et l'équipe de sécurité à la remédiation des vulnérabilités détectées par les mesures précédentes, visualisation sur Grafana.
+    \item Implémentation d'une pipeline SAST (Static Application Security Testing), et utilisation d'un LLM pour générer des rapports intelligibles incluant les conséquences opérationnelles des vulnérabilités détectées afin de limiter l'introduction de nouvelles vulnérabilités logicielles dans le code maison.
+     \item Configuration d'outils internes (JFrog Xray) pour la détection automatique de vulnérabilités dans les livrables.
 \end{itemize}
 
 \divider
 
-\cvevent{Alternant Développement IT}{Monaco Telecom}{août 2023 -- août 2025}{Monaco}
+\cvevent{Ingénieur Logiciel, Alternance}{Monaco Telecom}{août 2023 -- août 2025}{Monaco}
 \begin{itemize}
     \item Développement full-stack (React \& Spring Boot) from scratch d'une l'interface utilisateur pour RabbitMQ, afin de faciliter la gestion des queues d'erreurs (DLQs). Maquettage Figma, utilisation de l'architecture hexagonale et déploiement sur un environnement Kubernetes.
     \item Développement full-stack (React \& Spring Boot) incrémental d'un moteur de workflow pour gérer les abonnements et changements d’abonnements pour Monaco Telecom et plusieurs autres opérateurs (Epic Malta, Epic Chypre, Eir Irlande, Salt).
@@ -74,28 +76,16 @@
 
 \divider
 
-\cvevent{Alternant AdminSys}{FACI}{septembre 2021 -- août 2023}{Nice, France}
+\cvevent{AdminSys, Alternance}{FACI}{septembre 2021 -- août 2023}{Nice, France}
 \begin{itemize}
-    \item Gestion complète des systèmes pour des clients B2B
-    \item Installations complètes de baies de brassage (configuration de serveurs et pose)
-    \item Développement d'applications (WinDev)
+    \item Gestion complète de parcs informatiques pour des clients B2B.
+    \item Installations de baies de brassage et configuration de serveurs.
+    \item Développement d'applications full-stack à la demande de clients.
 \end{itemize}
 
 \cvsection{Projets}
 
-\cvevent{Application de cartographie pour créer des plans intéractifs et les publier en ligne}{Cartonord}{avril 2025 -- août 2025}{Nice, France}
-\begin{itemize}
-    \item Architecture Microservices et containerisation Docker
-    \item Déploiement sur AWS et utilisation de CloudFlare
-    \item Automatisation CI/CD
-\end{itemize}
-
-\divider\cvevent{Application d'automatisation d'onboarding IT}{Depine}{avril 2024 -- avril 2025}{Nice, France}
-\begin{itemize}
-    \item Déploiement sur AWS et utilisation de CloudFlare
-    \item Automatisation CI/CD
-    \item Management agile d'une équipe de 7 développeurs (SCRUM)
-\end{itemize}
+\includegraphics[width=3cm]{projectsQrCode.png}
 
 
 \switchcolumn
@@ -114,7 +104,7 @@
 
 \divider
 
-\cvtag{JavaScript (React, Vue, Next, Nest, Node)}
+\cvtag{JavaScript (React, Vue, Next, Nest, Express)}
 \cvtag{Java (Spring Boot)}
 \cvtag{Bash}
 \cvtag{PowerShell}
@@ -124,17 +114,17 @@
 
 \cvsection{éducation}
 
-\cvevent{Master of Science en Alternance}{Epitech}{2024 -- 2026}{Nice, France}
-{\faLock} Cybersécurité \& Cloud, Master 2\break
+\cvevent{M2 - MSc Cybersécurité \& Cloud, \\Alternance}{Epitech}{2024 -- 2026}{Nice, France}
+{\faTrophy} Félicitations du jury\break
 \begin{itemize}
-    \item Séc. offensive et défensive des systèmes
+    \item Pentest, Hardening, DevSecOps
     \item Déploiement d'infra. cloud sécurisées
 \end{itemize}
 
 \divider
 
-\cvevent{BUT Informatique en Alternance}{IUT Nice Côte d'Azur}{2021 -- 2024}{Sophia Antipolis, France}
-{\faTrophy} Major de Promotion, Licence 3\break
+\cvevent{L3 - BUT Informatique, Alternance}{IUT Nice Côte d'Azur}{2021 -- 2024}{Sophia Antipolis, France}
+{\faTrophy} Major de Promotion\break
 \begin{itemize}
     \item Réalisation d'applications : conception, développement, validation
     \item Cryptographie
@@ -152,14 +142,14 @@
 \cvsection{Langues}
 
 \cvskill{Français}{5}
-\cvskill{Anglais}{4}
+\cvskill{Anglais}{4.5}
 
 \cvsection{Centres d'intêrets}
 
-{\faMemory} Montage PC\break
 {\faFlag} CTF\break
-{\faVrCardboard} Réalité virtuelle\break
+{\faMemory} Montage PC\break
 {\faGamepad} Jeux vidéos
+{\faVrCardboard} Réalité virtuelle\break
 
 \end{paracol}
 \end{document}
